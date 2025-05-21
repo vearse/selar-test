@@ -27,10 +27,10 @@ This project is a simple Vue 3-based booking interface that integrates with the 
 git clone https://github.com/your-username/calendar-booking-app.git
 cd calendar-booking-app
 
-2. Install dependencies
+### 2. Install dependencies
 npm install
 
-3. Configure environment variables
+### 3. Configure environment variables
 Create a .env file with the following:
 VITE_GOOGLE_CLIENT_ID=your_google_client_id
 VITE_GOOGLE_API_KEY=your_google_api_key
@@ -41,9 +41,10 @@ You've enabled the Google Calendar API in your Google Cloud Console.
 
 You’ve created an OAuth 2.0 Client ID and API key.
 
-4. Run the app
+### 4. Run the app
 npm run dev
 
+## 🔧 Areas for Improvement
  What to Improve
 🎨 UI/UX & Design
 Use a component library (like Vuetify, Element Plus) for a more professional look.
