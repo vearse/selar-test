@@ -1,7 +1,10 @@
 <template>
   <div>
-    <CalendarConnect @connected="onConnected" />
+    <CalendarConnect  @connected="onConnected" />
+    
     <div v-if="connected">
+      <h2 class="text-lg font-semibold">Appointment</h2>
+      <p class="text-sm text-gray-500">Choose a date to see available time slots.</p>
       <input type="date" v-model="selectedDate" @change="fetchSlots" class="my-4" />
       <TimeSlotPicker :slots="availableSlots" @select="onSelectSlot" />
       <BookingForm v-if="selectedSlot" :slot="selectedSlot" @submit="onBook" />

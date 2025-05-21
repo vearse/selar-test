@@ -72,11 +72,31 @@ export function requestAccessToken() {
   });
 }
 
-export async function initializeGoogleAuth() {
-  const gapiInitialized = await gapiLoad();
-  const gisInitialized = await gisInit();
-  return gapiInitialized && gisInitialized;
+function waitForGapiToLoad() {
+  return new Promise((resolve, reject) => {
+    const check = () => {
+      if (window.gapi && window.gapi.load) {
+        resolve();
+      } else {
+        setTimeout(check, 50);
+      }
+    };
+    check();
+  });
 }
+
+export async function initializeGoogleAuth() {
+  try {
+    await waitForGapiToLoad(); 
+    const gapiInitialized = await gapiLoad();
+    const gisInitialized = await gisInit();
+    return gapiInitialized && gisInitialized;
+  } catch (err) {
+    console.error('Failed to initialize Google Auth:', err);
+    return false;
+  }
+}
+
 
 export async function getAvailableTimeSlots(date) {
   if (!isInitialized()) {
