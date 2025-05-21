@@ -24,8 +24,8 @@ This project is a simple Vue 3-based booking interface that integrates with the 
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/calendar-booking-app.git
-cd calendar-booking-app
+git clone https://github.com/vearse/selar-test
+cd selar-test
 
 ### 2. Install dependencies
 npm install
